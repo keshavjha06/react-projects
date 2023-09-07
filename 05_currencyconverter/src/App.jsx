@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import { InputBox } from './components'
-import { useCurrencyInfo } from './hooks/useCurrencyInfo'
+import useCurrencyInfo from './hooks/useCurrencyInfo'
+
 
 function App() {
 
@@ -9,7 +9,6 @@ function App() {
   const [from, setFrom] = useState("usd")
   const [to, setTo] = useState("inr")
   const [convertedAmount, setConvertedAmount] = useState(0)
-
 
   const currencyInfo = useCurrencyInfo(from)
 
@@ -39,6 +38,7 @@ function App() {
             onSubmit={(e) => {
               e.preventDefault();
               convert()
+
             }}
           >
             <div className="w-full mb-1">
@@ -66,7 +66,7 @@ function App() {
                 amount={convertedAmount}
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
-                selectCurrency={from}
+                selectCurrency={to}
                 amountDisable
               />
             </div>
@@ -78,8 +78,6 @@ function App() {
       </div>
     </div>
   );
-
-
 }
 
 export default App
