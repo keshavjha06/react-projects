@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { useTodo } from "../contexts";
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react'
+import { useTodo } from '../contexts/TodoContext';
 
 function TodoItem({ todo }) {
   const [isTodoEditable, setIsTodoEditable] = useState(false)
@@ -13,7 +14,6 @@ function TodoItem({ todo }) {
   const toggleCompleted = () => {
     toggleComplete(todo.id)
   }
-
 
   return (
     <div
