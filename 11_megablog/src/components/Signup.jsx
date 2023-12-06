@@ -18,14 +18,11 @@ function Signup() {
             const userData = await authService.createAccount(data)
             if (userData) {
                 const userData = await authService.getCurrentUser()
-                if (userData) dispatch(login(userData))
+                if (userData) dispatch(login(userData));
                 navigate("/")
-
             }
-
         } catch (error) {
             setError(error.message)
-
         }
     }
 
@@ -75,8 +72,7 @@ function Signup() {
                             type="password"
                             placeholder="Enter your password"
                             {...register("password", {
-                                required: true,
-                            })}
+                                required: true,})}
                         />
                         <Button type="submit" className="w-full">
                             Create Account
@@ -86,7 +82,6 @@ function Signup() {
             </div>
 
         </div>
-
     )
 }
 
